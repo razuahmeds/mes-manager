@@ -1,17 +1,22 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Home from './pages/Home';
-import { Register } from './componcnts/Register';
+import Login from "./feature/authentications/pages/Login";
+import Registration from "./feature/authentications/pages/Registration";
+import LayoutContainer from "./layout/LayoutContainer";
+import Dashboard from "./feature/dashboard/Dashboard";
+import CreateMember from "./feature/members/pages/CreateMember";
 
 function App() {
   return (
-  
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        
-        <Route path="/register" element={<Register/>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Registration />} />
+
+        <Route element={<LayoutContainer />}>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/memeber-create" element={<CreateMember />} />
+        </Route>
       </Routes>
     </Router>
   );
