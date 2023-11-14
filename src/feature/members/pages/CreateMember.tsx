@@ -18,7 +18,9 @@ const tailLayout = {
 
 
 
-function AddMember() {
+type Props = {};
+
+const CreateMember = (props: Props) => {
     const [componentSize, setComponentSize] = useState<SizeType | 'default'>('default');
 
   const onFormLayoutChange = ({ size }: { size: SizeType }) => {
@@ -40,7 +42,7 @@ function AddMember() {
         break;
     }
   };
-     return (
+  return <div>
     <Form
       labelCol={{ span: 4 }}
       wrapperCol={{ span: 14 }}
@@ -48,9 +50,9 @@ function AddMember() {
       initialValues={{ size: componentSize }}
       onValuesChange={onFormLayoutChange}
       size={componentSize as SizeType}
-      style={{ maxWidth: 600, margin:'100px'}}
+      style={{ maxWidth: 600, margin: '100px'}}
     >
-        <h2>AddMember</h2>
+        <h2>Members</h2>
       <Form.Item label="Form Size" name="size">
         <Radio.Group>
           <Radio.Button value="small">Small</Radio.Button>
@@ -92,8 +94,7 @@ function AddMember() {
         
       </Form.Item>
     </Form>
-  );
+  </div>;
 };
 
-
-export default AddMember
+export default CreateMember;
