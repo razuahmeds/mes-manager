@@ -8,6 +8,7 @@ import {
 import type { MenuProps } from "antd";
 import { Layout, Menu, theme } from "antd";
 import React from "react";
+import { Link } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -20,19 +21,20 @@ function getItem(
   children?: MenuItem[]
 ): MenuItem {
   return {
+    label,
     key,
     icon,
     children,
-    label,
   } as MenuItem;
 }
 
 type Props = {};
 
 const items2: MenuItem[] = [
-  getItem("Dashboard", "1", <PieChartOutlined />),
+  getItem(<Link to="/">Dashboard</Link>, "1", <PieChartOutlined />),
+
   getItem("Members", "sub2", <TeamOutlined />, [
-    getItem("Create", "6"),
+    getItem(<Link to="/memeber-create">Create</Link>, "6"),
     getItem("Lists", "8"),
   ]),
   getItem("Option 2", "2", <DesktopOutlined />),
