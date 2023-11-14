@@ -1,4 +1,5 @@
 import {
+  CommentOutlined,
   DesktopOutlined,
   FileOutlined,
   PieChartOutlined,

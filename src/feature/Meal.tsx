@@ -1,4 +1,4 @@
-import { SettingOutlined } from '@ant-design/icons';
+import { SettingOutlined, WechatFilled } from '@ant-design/icons';
 import React from 'react';
 import {  InputNumber, Select, Space } from 'antd';
 
@@ -23,6 +23,7 @@ function Meal( ) {
   return (
     <div style={{ maxWidth: 600, margin: '100px' }}>
         <h2>MEAl</h2>
+        <WechatFilled/>
          <Space direction="vertical">
     <InputNumber addonBefore="+" addonAfter="$" defaultValue={0} />
     <InputNumber addonBefore={selectBefore} addonAfter={selectAfter} defaultValue={0} />
