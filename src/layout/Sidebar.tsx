@@ -1,7 +1,7 @@
 import {
   DesktopOutlined,
-  FileOutlined,
   PieChartOutlined,
+  SettingFilled,
   TeamOutlined,
   UserOutlined,
 } from "@ant-design/icons";
@@ -35,16 +35,23 @@ const items2: MenuItem[] = [
 
   getItem("Members", "sub2", <TeamOutlined />, [
     getItem(<Link to="/memeber-create">Create</Link>, "6"),
-    getItem("Lists", "8"),
+    getItem(<Link to="/lists">Lists</Link>, "8"),
+  ]),
+  getItem("Mila", "sub3", <DesktopOutlined />, [
+    getItem(<Link to="/">Bajara</Link>, "6"),
+    getItem(<Link to="/">Bajara Lists</Link>, "8"),
+    getItem(<Link to="/">Mila</Link>, "9"),
+    getItem(<Link to="/">Mila Hisaba</Link>, "9"),
+    getItem(<Link to="/">Mila Rate</Link>, "10"),
   ]),
   getItem("Option 2", "2", <DesktopOutlined />),
   getItem("User", "sub1", <UserOutlined />, [
-    getItem("Tom", "3"),
-    getItem("Bill", "4"),
-    getItem("Alex", "5"),
-    getItem("jghjh", "55"),
+    getItem("View-User", "3"),
+    getItem("View", "4"),
   ]),
-  getItem("Files", "9", <FileOutlined />),
+  getItem("Configuration", "9", <SettingFilled />, [
+    getItem("Users", "6"),
+  ]),
 ];
 
 const Sidebar = (props: Props) => {
