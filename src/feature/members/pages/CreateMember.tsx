@@ -20,7 +20,7 @@ const tailLayout = {
 
 type Props = {};
 
-const CreateMember = (props: Props) => {
+ const CreateMember = (props: Props) => {
     const [componentSize, setComponentSize] = useState<SizeType | 'default'>('default');
 
   const onFormLayoutChange = ({ size }: { size: SizeType }) => {
