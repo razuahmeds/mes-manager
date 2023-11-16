@@ -1,5 +1,5 @@
-import { BellFilled, HomeFilled, UserOutlined, WechatFilled } from "@ant-design/icons";
-import { Avatar } from "antd";
+import { BellFilled, HomeFilled, WechatFilled } from "@ant-design/icons";
+import {  } from "antd";
 import Search from "antd/es/input/Search";
 import { Header } from "antd/es/layout/layout";
 import { NavDropdown } from "react-bootstrap";
