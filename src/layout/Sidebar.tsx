@@ -1,6 +1,7 @@
 import {
-  DesktopOutlined,
-  PieChartOutlined,
+  BankFilled,
+  DashboardFilled,
+  PieChartFilled,
   SettingFilled,
   TeamOutlined,
 } from "@ant-design/icons";
@@ -35,7 +36,7 @@ const items2: MenuItem[] = [
       Dashboard
     </Link>,
     "Dashboard",
-    <PieChartOutlined />
+    <DashboardFilled />
   ),
 
   getItem("Members", "sub2", <TeamOutlined />, [
@@ -53,7 +54,7 @@ const items2: MenuItem[] = [
     ),
   ]),
 
-  getItem("Bazar", "Bazar", <TeamOutlined />, [
+  getItem("Bazar", "Bazar", <BankFilled />, [
     getItem(
       <Link className="dec-none" to="/bazar-add">
         Create Bazar
@@ -68,12 +69,9 @@ const items2: MenuItem[] = [
     ),
   ]),
 
-  getItem("Mila", "sub3", <DesktopOutlined />, [
-    getItem(<Link to="/">Bajara</Link>, "6"),
-    getItem(<Link to="/">Bajara Lists</Link>, "8"),
-    getItem(<Link to="/">Mila</Link>, "9"),
-    getItem(<Link to="/">Mila Hisaba</Link>, "9"),
-    getItem(<Link to="/">Mila Rate</Link>, "10"),
+  getItem("Meal", "sub3", <PieChartFilled />, [
+    getItem(<Link className="dec-none" to="/">Cerate Meal</Link>, "9"),
+    getItem(<Link className="dec-none" to="/">Meal List</Link>, "9"),
   ]),
 
   getItem("Configuration", "9", <SettingFilled />, [getItem("Users", "6")]),

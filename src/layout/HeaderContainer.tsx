@@ -22,6 +22,7 @@ const HeaderContainer = (props: Props) => {
         <WechatFilled style={{ backgroundColor: '##1677ff', margin: '0 12px', fontSize: '29px', borderRadius: '50%' }} />
         <HomeFilled style={{ color: 'white', fontSize: '29px', backgroundColor: '##1677ff' }} />
         <BellFilled  style={{ backgroundColor: '##1677ff', margin: '0 12px', fontSize: '29px', borderRadius: '50%' }}/>
+        
         <NavDropdown title="Logo" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Mess</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Content</NavDropdown.Item>
