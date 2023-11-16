@@ -3,11 +3,10 @@ import {
   PieChartOutlined,
   SettingFilled,
   TeamOutlined,
-  UserOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Layout, Menu, theme } from "antd";
-import React from "react";
+import { Layout, Menu } from "antd";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
@@ -31,12 +30,44 @@ function getItem(
 type Props = {};
 
 const items2: MenuItem[] = [
-  getItem(<Link to="/">Dashboard</Link>, "1", <PieChartOutlined />),
+  getItem(
+    <Link className="dec-none" to="/">
+      Dashboard
+    </Link>,
+    "Dashboard",
+    <PieChartOutlined />
+  ),
 
   getItem("Members", "sub2", <TeamOutlined />, [
-    getItem(<Link to="/memeber-create">Create</Link>, "6"),
-    getItem(<Link to="/lists">Lists</Link>, "8"),
+    getItem(
+      <Link className="dec-none" to="/memeber-create">
+        Create Member
+      </Link>,
+      "memeber-create"
+    ),
+    getItem(
+      <Link className="dec-none" to="/lists">
+        Members List
+      </Link>,
+      "lists"
+    ),
   ]),
+
+  getItem("Bazar", "Bazar", <TeamOutlined />, [
+    getItem(
+      <Link className="dec-none" to="/bazar-add">
+        Create Bazar
+      </Link>,
+      "bazar-add"
+    ),
+    getItem(
+      <Link className="dec-none" to="/bazar-list">
+        Bazar List
+      </Link>,
+      "bazar-list"
+    ),
+  ]),
+
   getItem("Mila", "sub3", <DesktopOutlined />, [
     getItem(<Link to="/">Bajara</Link>, "6"),
     getItem(<Link to="/">Bajara Lists</Link>, "8"),
@@ -44,24 +75,30 @@ const items2: MenuItem[] = [
     getItem(<Link to="/">Mila Hisaba</Link>, "9"),
     getItem(<Link to="/">Mila Rate</Link>, "10"),
   ]),
-  getItem("Option 2", "2", <DesktopOutlined />),
-  getItem("User", "sub1", <UserOutlined />, [
-    getItem("View-User", "3"),
-    getItem("View", "4"),
-  ]),
-  getItem("Configuration", "9", <SettingFilled />, [
-    getItem("Users", "6"),
-  ]),
+
+  getItem("Configuration", "9", <SettingFilled />, [getItem("Users", "6")]),
 ];
 
 const Sidebar = (props: Props) => {
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
+  const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <Sider width={200} style={{ background: colorBgContainer }}>
+    <Sider
+      style={{
+        overflow: "auto",
+        height: "100vh",
+        position: "fixed",
+        left: 0,
+        top: 0,
+        bottom: 0,
+      }}
+      width={200}
+      collapsible
+      collapsed={collapsed}
+      onCollapse={(value) => setCollapsed(value)}
+    >
       <Menu
+        theme="dark"
         mode="inline"
         defaultSelectedKeys={["1"]}
         defaultOpenKeys={["sub1"]}
