@@ -3,7 +3,7 @@ import { bazarColumns, bazarList } from "../utils/bazarUtils";
 
 function BazarList() {
   return (
-    <div>
+    <div style={{ padding: 64 }}>
       <Table columns={bazarColumns} dataSource={bazarList} />
     </div>
   );

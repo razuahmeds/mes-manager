@@ -70,11 +70,11 @@ const items2: MenuItem[] = [
   ]),
 
   getItem("Meal", "sub3", <PieChartFilled />, [
-    getItem(<Link className="dec-none" to="/">Cerate Meal</Link>, "9"),
-    getItem(<Link className="dec-none" to="/">Meal List</Link>, "9"),
+    getItem(<Link className="dec-none" to="cerate-meal">Cerate Meal</Link>, "cerate-meal"),
+    getItem(<Link className="dec-none" to="meal-list">Meal List</Link>, "meal-list"),
   ]),
 
-  getItem("Configuration", "9", <SettingFilled />, [getItem("Users", "6")]),
+  getItem("Configuration", "11", <SettingFilled />, [getItem("Users", "6")]),
 ];
 
 const Sidebar = (props: Props) => {

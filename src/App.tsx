@@ -9,6 +9,8 @@ import Dashboard from "./feature/dashboard/pages/Dashboard";
 import CreateMember from "./feature/members/pages/CreateMember";
 import Lists from "./feature/members/pages/Lists";
 import LayoutContainer from "./layout/LayoutContainer";
+import CerateMeal from "./feature/meal/pages/CerateMeal";
+import MealList from "./feature/meal/pages/MealList";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
 
           <Route path="/bazar-add" element={<CreateBazar />} />
           <Route path="/bazar-list" element={<BazarList />} />
+          <Route path="/cerate-meal" element={<CerateMeal />} />
+          <Route path="/meal-list" element={<MealList />} />
         </Route>
       </Routes>
     </Router>

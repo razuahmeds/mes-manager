@@ -31,13 +31,6 @@ const tabeData: RecordType[] = [
     firstName: "Akash",
     lastName: "Ahmed",
   },
-  {
-    id: 4,
-    address1: "Address",
-    age: 22,
-    firstName: "Akash",
-    lastName: "Ahmed",
-  },
 ];
 
 const fixedColumns: TableProps<RecordType>["columns"] = [
@@ -60,7 +53,7 @@ const fixedColumns: TableProps<RecordType>["columns"] = [
     title: "Group",
     render: (_, record) => `Group ${Math.floor(record.id / 4)}`,
     onCell: (record) => ({
-      rowSpan: record.id % 4 === 0 ? 4 : 0,
+      rowSpan: record.id % 4 === 0 ? 20 : 0,
     }),
   },
   {
@@ -74,7 +67,7 @@ const fixedColumns: TableProps<RecordType>["columns"] = [
     title: "Address 1",
     dataIndex: "address1",
     onCell: (record) => ({
-      colSpan: record.id % 4 === 0 ? 0 : 1,
+      colSpan: record.id % 20 === 0 ? 0 : 1,
     }),
   },
 
