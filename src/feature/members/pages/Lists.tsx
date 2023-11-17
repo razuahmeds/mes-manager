@@ -1,5 +1,6 @@
 import type { TableProps } from "antd";
-import { Space, Table, Typography } from "antd";
+import { Button, Space, Table } from "antd";
+import AddMemberMoney from "../components/AddMemberMoney";
 
 interface RecordType {
   id: number;
@@ -76,8 +77,11 @@ const fixedColumns: TableProps<RecordType>["columns"] = [
     fixed: "right",
     render: () => (
       <Space>
-        <Typography.Link>Action1</Typography.Link>
-        <Typography.Link>Action2</Typography.Link>
+        <AddMemberMoney />
+        <Button size="small">Edit</Button>
+        <Button size="small" danger>
+          Delete
+        </Button>
       </Space>
     ),
   },

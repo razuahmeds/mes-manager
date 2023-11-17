@@ -1,30 +1,21 @@
-import {
-  Button,
-  Col,
-  DatePicker,
-  Form,
-  InputNumber,
-  Row,
-} from "antd";
+import { Button, Col, DatePicker, Form, InputNumber, Row } from "antd";
 
-
-const CerateMeal=() => {
-   const onFinish = (values: any) => {
+const CerateMeal = () => {
+  const onFinish = (values: any) => {
     console.log({ values });
   };
+
   return (
-    <div>
+    <div style={{ padding: 64, alignItems: "center" }}>
       <Form onFinish={onFinish} layout="vertical">
         <Row gutter={12}>
-         
           <Col span={4}>
-            <Form.Item name="created_at" label="Date">
+            <Form.Item name="created_at" label="">
               <DatePicker />
             </Form.Item>
           </Col>
           <Col span={4}>
-             <InputNumber min={0/1} max={3} defaultValue={0/1} />;
-            
+            <InputNumber min={0 / 1} max={3} defaultValue={0 / 1} />;
           </Col>
           <Col span={4}>
             <InputNumber min={0} max={5} defaultValue={0} />;
@@ -32,7 +23,7 @@ const CerateMeal=() => {
           <Col span={4}>
             <InputNumber min={0} max={5} defaultValue={0} />;
           </Col>
-          <Col span={4}>
+          <Col span={12}>
             <Form.Item>
               <Button type="primary" htmlType="submit">
                 Submit
@@ -43,6 +34,6 @@ const CerateMeal=() => {
       </Form>
     </div>
   );
-}
+};
 
-export default CerateMeal
+export default CerateMeal;

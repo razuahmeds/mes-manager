@@ -16,6 +16,8 @@ const CreateMember = () => {
     message.success("Form submited successful!");
     console.log({ values });
   };
+
+
   return (
     <div>
       <Breadcrumb
@@ -85,6 +87,9 @@ const CreateMember = () => {
                 Submit
               </Button>
             </Form.Item>
+          </Col>
+          <Col span={12}>
+            
           </Col>
         </Row>
       </Form>
