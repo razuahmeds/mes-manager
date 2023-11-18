@@ -1,7 +1,8 @@
+import React from "react";
+import { usersColumns, usersList } from "../utils/UsersUtils";
 import { Breadcrumb, Table } from "antd";
-import { mealColumns, mealList } from "../utils/MealUtils";
 
-function MealList() {
+function UsersList() {
   return (
     <div style={{ padding: 64 }}>
       <Breadcrumb
@@ -12,18 +13,18 @@ function MealList() {
             href: "",
           },
           {
-            title: "Meal",
+            title: "Users",
             href: "",
           },
           {
-            title: "Liat",
+            title: "List",
             href: "",
           },
         ]}
       />
-      <Table columns={mealColumns} dataSource={mealList} />
+      <Table columns={usersColumns} dataSource={usersList} />
     </div>
   );
 }
 
-export default MealList;
+export default UsersList;

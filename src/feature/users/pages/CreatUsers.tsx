@@ -6,12 +6,10 @@ import {
   Form,
   Input,
   Row,
-  Select,
   message,
 } from "antd";
-const { Option } = Select;
 
-const CreateMember = () => {
+function CreatUsers() {
   const onFinish = (values: any) => {
     message.success("Form submited successful!");
     console.log({ values });
@@ -27,7 +25,7 @@ const CreateMember = () => {
             href: "",
           },
           {
-            title: "Members",
+            title: "Users",
             href: "",
           },
           {
@@ -39,42 +37,22 @@ const CreateMember = () => {
       <Form onFinish={onFinish} layout="vertical">
         <Row gutter={12}>
           <Col span={12}>
-            <Form.Item name="first_name" label="First Name">
-              <Input placeholder="Enter your first name" />
+            <Form.Item name="name" label="Name">
+              <Input placeholder="Enter your name" />
             </Form.Item>
           </Col>
 
-          <Col span={12}>
-            <Form.Item name="last_name" label="Last Name">
-              <Input placeholder="Enter your last name" />
-            </Form.Item>
-          </Col>
-          <Col span={12}>
-            <Form.Item name="email" label="Email">
-              <Input placeholder="Enter your email" />
-            </Form.Item>
-          </Col>
           <Col span={12}>
             <Form.Item name="mobile" label="Phone Number">
               <Input placeholder="Ener your mobile" />
             </Form.Item>
           </Col>
           <Col span={12}>
-            <Form.Item
-              name="gender"
-              label="Gender"
-              rules={[{ required: true }]}
-            >
-              <Select
-                placeholder="Select a option and change input text above"
-                allowClear
-              >
-                <Option value="male">male</Option>
-                <Option value="female">female</Option>
-                <Option value="other">other</Option>
-              </Select>
+            <Form.Item name="address" label="Address">
+              <Input placeholder="Address" />
             </Form.Item>
           </Col>
+
           <Col span={12}>
             <Form.Item name="created_at" label="DatePicker">
               <DatePicker className="w-100" />
@@ -92,6 +70,6 @@ const CreateMember = () => {
       </Form>
     </div>
   );
-};
+}
 
-export default CreateMember;
+export default CreatUsers;

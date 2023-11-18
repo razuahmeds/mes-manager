@@ -1,5 +1,13 @@
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
-import { Button, Form, Input, InputNumber, Select, Space } from "antd";
+import {
+  Breadcrumb,
+  Button,
+  Form,
+  Input,
+  InputNumber,
+  Select,
+  Space,
+} from "antd";
 const { Option } = Select;
 
 type Props = {};
@@ -19,7 +27,24 @@ const CreateBazar = (props: Props) => {
   );
 
   return (
-    <div>
+    <div style={{ padding: 54 }}>
+      <Breadcrumb
+        separator=">"
+        items={[
+          {
+            title: "Dashboard",
+            href: "",
+          },
+          {
+            title: "Bazar",
+            href: "",
+          },
+          {
+            title: "Create",
+            href: "",
+          },
+        ]}
+      />
       <Form
         name="dynamic_form_nest_item"
         onFinish={onFinish}
@@ -52,7 +77,7 @@ const CreateBazar = (props: Props) => {
                 >
                   <Form.Item
                     {...restField}
-                    name={[name, "bazar_name"]}
+                    name="bazar_name"
                     label="Bazar Name"
                     rules={[{ required: true, message: "Missing Bazar Name" }]}
                   >
@@ -78,7 +103,7 @@ const CreateBazar = (props: Props) => {
 
                   <Form.Item
                     {...restField}
-                    name={[name, "bazar_amount"]}
+                    name="bazar_amount"
                     label="Amount"
                     rules={[{ required: true, message: "Missing Amount" }]}
                   >

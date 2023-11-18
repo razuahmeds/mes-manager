@@ -11,6 +11,8 @@ import Lists from "./feature/members/pages/Lists";
 import LayoutContainer from "./layout/LayoutContainer";
 import CerateMeal from "./feature/meal/pages/CerateMeal";
 import MealList from "./feature/meal/pages/MealList";
+import CreatUsers from "./feature/users/pages/CreatUsers";
+import UsersList from "./feature/users/pages/UsersList";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           <Route path="/bazar-list" element={<BazarList />} />
           <Route path="/create-meal" element={<CerateMeal />} />
           <Route path="/meal-list" element={<MealList />} />
+          <Route path="/create-users" element={<CreatUsers />} />
+          <Route path="/users-list" element={<UsersList />} />
         </Route>
       </Routes>
     </Router>
