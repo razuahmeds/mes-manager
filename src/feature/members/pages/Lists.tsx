@@ -50,13 +50,7 @@ const fixedColumns: TableProps<RecordType>["columns"] = [
     dataIndex: "lastName",
     fixed: "left",
   },
-  {
-    title: "Group",
-    render: (_, record) => `Group ${Math.floor(record.id / 4)}`,
-    onCell: (record) => ({
-      rowSpan: record.id % 4 === 0 ? 20 : 0,
-    }),
-  },
+
   {
     title: "Age",
     dataIndex: "age",

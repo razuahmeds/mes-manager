@@ -4,6 +4,9 @@ import {
   PieChartFilled,
   SettingFilled,
   TeamOutlined,
+  UserAddOutlined,
+  UserOutlined,
+  UserSwitchOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Layout, Menu, Typography } from "antd";
@@ -71,20 +74,37 @@ const items2: MenuItem[] = [
 
   getItem("Meal", "sub3", <PieChartFilled />, [
     getItem(
-      <Link className="dec-none" to="cerate-meal">
-        Cerate Meal
+      <Link className="dec-none" to="/create-meal">
+        Create Meal
       </Link>,
       "cerate-meal"
     ),
     getItem(
-      <Link className="dec-none" to="meal-list">
+      <Link className="dec-none" to="/meal-list">
         Meal List
       </Link>,
       "meal-list"
     ),
   ]),
 
-  getItem("Configuration", "11", <SettingFilled />, [getItem("Users", "6")]),
+  getItem("Configuration", "11", <SettingFilled />, [
+    getItem("Users", "u  sers", <UserOutlined />, [
+      getItem(
+        <Link className="dec-none" to="/create-users">
+          Create Users
+        </Link>,
+        "create-users",
+        <UserAddOutlined />
+      ),
+      getItem(
+        <Link className="dec-none" to="/users-list">
+          Users List
+        </Link>,
+        "users-list",
+        <UserSwitchOutlined />
+      ),
+    ]),
+  ]),
 ];
 
 const Sidebar = (props: Props) => {

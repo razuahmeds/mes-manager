@@ -1,4 +1,4 @@
-import { Button, DatePicker, Drawer, Form, Input, Space } from "antd";
+import { Button, DatePicker, Drawer, Form, Input } from "antd";
 import { useState } from "react";
 
 function AddMemberMoney() {
@@ -9,6 +9,9 @@ function AddMemberMoney() {
 
   const onClose = () => {
     setOpen(false);
+  };
+  const onFinish = (values: any) => {
+    console.log({ values });
   };
   return (
     <div>
@@ -21,17 +24,25 @@ function AddMemberMoney() {
         onClose={onClose}
         open={open}
       >
-        <Form>
-          <Form.Item name="last_name" label="">
-            <Input placeholder="Enter your last name" />
+        <Form onFinish={onFinish} layout="vertical">
+          <Form.Item name="name" label="">
+            <Input placeholder="Enter your name" />
           </Form.Item>
-          <Space.Compact style={{ width: "100%", marginBottom: "20px" }}>
+          <Form.Item
+            name="amoney"
+            label=""
+            style={{ width: "100%", marginBottom: "20px" }}
+          >
             <Input placeholder="Amoney" />
-          </Space.Compact>
-          <Form.Item name="created_at" label="" style={{ width: "100%" }}>
-            <DatePicker />
           </Form.Item>
-          <Button>Submit</Button>
+          <Form.Item name="created_at" label="">
+            <DatePicker className="w-100" />
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
         </Form>
       </Drawer>
     </div>

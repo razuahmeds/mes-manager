@@ -26,7 +26,7 @@ function App() {
 
           <Route path="/bazar-add" element={<CreateBazar />} />
           <Route path="/bazar-list" element={<BazarList />} />
-          <Route path="/cerate-meal" element={<CerateMeal />} />
+          <Route path="/create-meal" element={<CerateMeal />} />
           <Route path="/meal-list" element={<MealList />} />
         </Route>
       </Routes>
