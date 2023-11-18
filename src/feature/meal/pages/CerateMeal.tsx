@@ -9,12 +9,12 @@ const CerateMeal = () => {
     <div style={{ padding: 64, alignItems: "center" }}>
       <Form onFinish={onFinish} layout="vertical">
         <Row gutter={12}>
-          <Col span={4}>
+          <Col md={6} sm={12}>
             <Form.Item name="created_at" label="Date">
-              <DatePicker />
+              <DatePicker className="w-100" />
             </Form.Item>
           </Col>
-          <Col span={4}>
+          <Col md={6} sm={12}>
             <Form.Item name="break_fast" label="Break Fast">
               <InputNumber
                 className="w-100"
@@ -24,17 +24,17 @@ const CerateMeal = () => {
               />
             </Form.Item>
           </Col>
-          <Col span={4}>
+          <Col md={6} sm={12}>
             <Form.Item name="lunch" label="Lunch">
               <InputNumber className="w-100" min={0} max={5} defaultValue={1} />
             </Form.Item>
           </Col>
-          <Col span={4}>
+          <Col md={6} sm={12}>
             <Form.Item name="dinner" label="Dinner">
               <InputNumber className="w-100" min={0} max={5} defaultValue={1} />
             </Form.Item>
           </Col>
-          <Col span={6} offset={12}>
+          <Col span={6} offset={18}>
             <Form.Item>
               <Button type="primary" htmlType="submit">
                 Submit
