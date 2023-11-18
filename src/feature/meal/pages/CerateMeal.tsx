@@ -10,20 +10,31 @@ const CerateMeal = () => {
       <Form onFinish={onFinish} layout="vertical">
         <Row gutter={12}>
           <Col span={4}>
-            <Form.Item name="created_at" label="">
+            <Form.Item name="created_at" label="Date">
               <DatePicker />
             </Form.Item>
           </Col>
           <Col span={4}>
-            <InputNumber min={0 / 1} max={3} defaultValue={0 / 1} />;
+            <Form.Item name="break_fast" label="Break Fast">
+              <InputNumber
+                className="w-100"
+                min={0.5}
+                max={3}
+                defaultValue={0.5}
+              />
+            </Form.Item>
           </Col>
           <Col span={4}>
-            <InputNumber min={0} max={5} defaultValue={0} />;
+            <Form.Item name="lunch" label="Lunch">
+              <InputNumber className="w-100" min={0} max={5} defaultValue={1} />
+            </Form.Item>
           </Col>
           <Col span={4}>
-            <InputNumber min={0} max={5} defaultValue={0} />;
+            <Form.Item name="dinner" label="Dinner">
+              <InputNumber className="w-100" min={0} max={5} defaultValue={1} />
+            </Form.Item>
           </Col>
-          <Col span={12}>
+          <Col span={6} offset={12}>
             <Form.Item>
               <Button type="primary" htmlType="submit">
                 Submit

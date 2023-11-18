@@ -6,7 +6,7 @@ import {
   TeamOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Typography } from "antd";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -70,8 +70,18 @@ const items2: MenuItem[] = [
   ]),
 
   getItem("Meal", "sub3", <PieChartFilled />, [
-    getItem(<Link className="dec-none" to="cerate-meal">Cerate Meal</Link>, "cerate-meal"),
-    getItem(<Link className="dec-none" to="meal-list">Meal List</Link>, "meal-list"),
+    getItem(
+      <Link className="dec-none" to="cerate-meal">
+        Cerate Meal
+      </Link>,
+      "cerate-meal"
+    ),
+    getItem(
+      <Link className="dec-none" to="meal-list">
+        Meal List
+      </Link>,
+      "meal-list"
+    ),
   ]),
 
   getItem("Configuration", "11", <SettingFilled />, [getItem("Users", "6")]),
@@ -89,12 +99,17 @@ const Sidebar = (props: Props) => {
         left: 0,
         top: 0,
         bottom: 0,
+        paddingTop: 10,
       }}
       width={200}
       collapsible
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
     >
+      <Typography.Title level={3} className="text-center uppercase " code>
+        wh 7.0
+      </Typography.Title>
+
       <Menu
         theme="dark"
         mode="inline"

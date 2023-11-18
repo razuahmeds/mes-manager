@@ -12,10 +12,10 @@ const LayoutContainer: React.FC = () => {
     <Layout>
       <Sidebar />
 
-      <Layout>
+      <Layout style={{ marginLeft: 200 }}>
         <HeaderContainer />
 
-        <Content style={{ marginLeft: 200, minHeight: "80vh", padding: 30 }}>
+        <Content style={{ minHeight: "80vh", padding: 30 }}>
           <Outlet />
         </Content>
 

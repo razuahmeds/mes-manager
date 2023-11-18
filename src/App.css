@@ -5,3 +5,19 @@
 .dec-none {
   text-decoration: none;
 }
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-light {
+  color: #fff;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.w-100 {
+  width: 100%;
+}
