@@ -1,11 +1,12 @@
 import { Button } from "antd";
+
 import { ColumnsType } from "antd/es/table";
 
-interface IBazarList {
-  key: string;
+export interface IBazarList {
+  id: number;
   name: string;
-  age: number;
-  address: string;
+  amount: number;
+  date: string;
 }
 
 export const bazarColumns: ColumnsType<IBazarList> = [
@@ -16,22 +17,23 @@ export const bazarColumns: ColumnsType<IBazarList> = [
     width: "30%",
   },
   {
-    title: "Age",
-    dataIndex: "age",
+    title: "Amount",
+    dataIndex: "amount",
     key: "age",
     width: "20%",
   },
   {
-    title: "Address",
-    dataIndex: "address",
+    title: "Date",
+    dataIndex: "date",
     key: "address",
-    sorter: (a, b) => a.address.length - b.address.length,
-    sortDirections: ["descend", "ascend"],
   },
   {
     title: "Action",
     render: (_) => (
       <>
+        <Button size="small" style={{ marginRight: 15 }}>
+          View
+        </Button>
         <Button type="dashed" style={{ marginRight: 15 }} size="small">
           Edit
         </Button>
@@ -40,32 +42,5 @@ export const bazarColumns: ColumnsType<IBazarList> = [
         </Button>
       </>
     ),
-  },
-];
-
-export const bazarList: IBazarList[] = [
-  {
-    key: "1",
-    name: "John Brown",
-    age: 32,
-    address: "New York No. 1 Lake Park",
-  },
-  {
-    key: "2",
-    name: "Joe Black",
-    age: 42,
-    address: "London No. 1 Lake Park",
-  },
-  {
-    key: "3",
-    name: "Jim Green",
-    age: 32,
-    address: "Sydney No. 1 Lake Park",
-  },
-  {
-    key: "4",
-    name: "Jim Red",
-    age: 32,
-    address: "London No. 2 Lake Park",
   },
 ];

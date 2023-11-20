@@ -1,69 +1,46 @@
 import type { TableProps } from "antd";
 import { Breadcrumb, Button, Space, Table } from "antd";
 import AddMemberMoney from "../components/AddMemberMoney";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-interface RecordType {
+interface IMembers {
   id: number;
-  firstName: string;
-  lastName: string;
-  age: number;
-  address1: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+  city: string;
+  mobile: string;
 }
 
-const tabeData: RecordType[] = [
+const fixedColumns: TableProps<IMembers>["columns"] = [
   {
-    id: 1,
-    address1: "Address",
-    age: 22,
-    firstName: "Akash",
-    lastName: "Ahmed",
-  },
-  {
-    id: 2,
-    address1: "Address",
-    age: 22,
-    firstName: "Akash",
-    lastName: "Ahmed",
-  },
-  {
-    id: 3,
-    address1: "Address",
-    age: 22,
-    firstName: "Akash",
-    lastName: "Ahmed",
-  },
-];
-
-const fixedColumns: TableProps<RecordType>["columns"] = [
-  {
-    title: "ID",
+    title: "SL.",
     dataIndex: "id",
     fixed: "left",
   },
   {
     title: "FistName",
-    dataIndex: "firstName",
+    dataIndex: "first_name",
     fixed: "left",
   },
   {
     title: "LastName",
-    dataIndex: "lastName",
+    dataIndex: "last_name",
     fixed: "left",
   },
 
   {
-    title: "Age",
-    dataIndex: "age",
-    onCell: (record) => ({
-      colSpan: record.id % 4 === 0 ? 2 : 1,
-    }),
+    title: "Eamil",
+    dataIndex: "email",
   },
   {
-    title: "Address 1",
-    dataIndex: "address1",
-    onCell: (record) => ({
-      colSpan: record.id % 20 === 0 ? 0 : 1,
-    }),
+    title: "Address",
+    dataIndex: "city",
+  },
+  {
+    title: "Mobile",
+    dataIndex: "mobile",
   },
 
   {
@@ -72,7 +49,12 @@ const fixedColumns: TableProps<RecordType>["columns"] = [
     render: () => (
       <Space>
         <AddMemberMoney />
-        <Button size="small">Edit</Button>
+        <Button size="small" style={{ marginRight: 15 }}>
+          View
+        </Button>
+        <Button size="small" style={{ marginRight: 15 }}>
+          Edit
+        </Button>
         <Button size="small" danger>
           Delete
         </Button>
@@ -81,10 +63,22 @@ const fixedColumns: TableProps<RecordType>["columns"] = [
   },
 ];
 
+const url_path = "http://localhost:5000/members";
+
 function Lists() {
+  const [members, setMembers] = useState<IMembers[]>([]);
+
+  useEffect(() => {
+    axios.get(url_path).then((response) => {
+      const data = response.data;
+      setMembers(data);
+    });
+  }, []);
+
   return (
-    <div style={{ padding: 64 }}>
+    <div>
       <Breadcrumb
+        style={{ marginBottom: 20 }}
         separator=">"
         items={[
           {
@@ -101,12 +95,7 @@ function Lists() {
           },
         ]}
       />
-      <Table
-        bordered
-        columns={fixedColumns}
-        rowKey="id"
-        dataSource={tabeData}
-      />
+      <Table bordered columns={fixedColumns} rowKey="id" dataSource={members} />
     </div>
   );
 }

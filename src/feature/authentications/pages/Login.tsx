@@ -23,11 +23,27 @@ const Login = (props: Props) => {
     <div className="container">
       <div className="heading">Sign In</div>
       <form action="" className="form">
-        
-        <input onBlur={(e) => setName(e.target.value)} className="input" type="text" placeholder="Name" />
-        <input onBlur={(e) => setEmail(e.target.value)} className="input" type="text" placeholder="Email" />
-        <input onBlur={(e) => setPassword(e.target.value)} className="input" type="password" name="" id="" placeholder="Password" />
-       
+        <input
+          onBlur={(e) => setName(e.target.value)}
+          className="input"
+          type="text"
+          placeholder="Name"
+        />
+        <input
+          onBlur={(e) => setEmail(e.target.value)}
+          className="input"
+          type="text"
+          placeholder="Email"
+        />
+        <input
+          onBlur={(e) => setPassword(e.target.value)}
+          className="input"
+          type="password"
+          name=""
+          id=""
+          placeholder="Password"
+        />
+
         <span className="forgot-password">
           <a href="/">Forgot Password ?</a>
         </span>

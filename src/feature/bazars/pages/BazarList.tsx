@@ -1,10 +1,23 @@
 import { Breadcrumb, Table } from "antd";
-import { bazarColumns, bazarList } from "../utils/bazarUtils";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { IBazarList, bazarColumns } from "../utils/bazarUtils";
 
 function BazarList() {
+  const [bazar, setBazar] = useState<IBazarList[]>([]);
+  const url_path = "http://localhost:5000/bazar-list";
+  useEffect(() => {
+    axios.get(url_path).then((response) => {
+      const data = response.data;
+      setBazar(data);
+    });
+  }, []);
+  // console.log({ bazar });
+
   return (
-    <div style={{ padding: 64 }}>
+    <div>
       <Breadcrumb
+        style={{ marginBottom: 20 }}
         separator=">"
         items={[
           {
@@ -21,7 +34,7 @@ function BazarList() {
           },
         ]}
       />
-      <Table columns={bazarColumns} dataSource={bazarList} />
+      <Table columns={bazarColumns} rowKey="id" dataSource={bazar} />
     </div>
   );
 }

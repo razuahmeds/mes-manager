@@ -1,32 +1,25 @@
 import { Button } from "antd";
 import { ColumnsType } from "antd/es/table";
 
-interface IMealList {
-  key: string;
+export interface IMealList {
+  id: number;
   name: string;
-  age: number;
-  address: string;
+  meai_calculation: number;
+  date: string;
 }
 
 export const mealColumns: ColumnsType<IMealList> = [
   {
     title: "Name",
     dataIndex: "name",
-    key: "name",
-    width: "30%",
   },
   {
-    title: "Age",
-    dataIndex: "age",
-    key: "age",
-    width: "20%",
+    title: "Meai_calculation",
+    dataIndex: "meai_calculation",
   },
   {
-    title: "Address",
-    dataIndex: "address",
-    key: "address",
-    sorter: (a, b) => a.address.length - b.address.length,
-    sortDirections: ["descend", "ascend"],
+    title: "Date",
+    dataIndex: "date",
   },
   {
     title: "Action",
@@ -40,32 +33,5 @@ export const mealColumns: ColumnsType<IMealList> = [
         </Button>
       </>
     ),
-  },
-];
-
-export const mealList: IMealList[] = [
-  {
-    key: "1",
-    name: "John Brown",
-    age: 32,
-    address: "1 Lake Park",
-  },
-  {
-    key: "2",
-    name: "Joe Black",
-    age: 42,
-    address: "London No",
-  },
-  {
-    key: "3",
-    name: "Jim Green",
-    age: 32,
-    address: "Sydney No. 1 Lake Park",
-  },
-  {
-    key: "4",
-    name: "Jim Red",
-    age: 32,
-    address: "London No. 2 Lake Park",
   },
 ];

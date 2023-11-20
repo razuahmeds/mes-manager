@@ -1,10 +1,23 @@
 import { Breadcrumb, Table } from "antd";
-import { mealColumns, mealList } from "../utils/MealUtils";
+import { IMealList, mealColumns } from "../utils/MealUtils";
+
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function MealList() {
+  const [meal, setMeal] = useState<IMealList[]>([]);
+  const url_path = "http://localhost:5000/meal-list";
+  useEffect(() => {
+    axios.get(url_path).then((response) => {
+      const data = response.data;
+      setMeal(data);
+    });
+  }, []);
+  console.log({ meal });
   return (
-    <div style={{ padding: 64 }}>
+    <div>
       <Breadcrumb
+        style={{ marginBottom: 20 }}
         separator=">"
         items={[
           {
@@ -21,7 +34,7 @@ function MealList() {
           },
         ]}
       />
-      <Table columns={mealColumns} dataSource={mealList} />
+      <Table columns={mealColumns} dataSource={meal} />
     </div>
   );
 }
