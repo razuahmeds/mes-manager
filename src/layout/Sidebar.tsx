@@ -50,7 +50,7 @@ const items2: MenuItem[] = [
       "memeber-create"
     ),
     getItem(
-      <Link className="dec-none" to="/lists">
+      <Link className="dec-none" to="/memeber-lists">
         Members List
       </Link>,
       "lists"

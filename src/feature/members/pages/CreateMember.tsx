@@ -9,12 +9,20 @@ import {
   Select,
   message,
 } from "antd";
+import axios from "axios";
 const { Option } = Select;
 
+const url = "http://localhost:5000/member";
 const CreateMember = () => {
+  // const onFinish = (values: any) => {
+  //   message.success("Form submited successful!");
+  //   console.log({ values });
+  // };
   const onFinish = (values: any) => {
-    message.success("Form submited successful!");
-    console.log({ values });
+    axios.post(url, values).then((response) => {
+      const resData = response.data;
+      message.success(resData);
+    });
   };
 
   return (
@@ -76,7 +84,7 @@ const CreateMember = () => {
             </Form.Item>
           </Col>
           <Col span={12}>
-            <Form.Item name="created_at" label="DatePicker">
+            <Form.Item name="created_at" label="Date">
               <DatePicker className="w-100" />
             </Form.Item>
           </Col>

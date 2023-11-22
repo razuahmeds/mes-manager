@@ -24,7 +24,7 @@ function App() {
         <Route element={<LayoutContainer />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/memeber-create" element={<CreateMember />} />
-          <Route path="/lists" element={<Lists />} />
+          <Route path="/memeber-lists" element={<Lists />} />
 
           <Route path="/bazar-add" element={<CreateBazar />} />
           <Route path="/bazar-list" element={<BazarList />} />

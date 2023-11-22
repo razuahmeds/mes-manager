@@ -8,16 +8,22 @@ import {
   Row,
   message,
 } from "antd";
+import axios from "axios";
+
+const url = "http://localhost:5000/user";
 
 function CreatUsers() {
   const onFinish = (values: any) => {
-    message.success("Form submited successful!");
-    console.log({ values });
+    axios.post(url, values).then((response) => {
+      const resData = response.data;
+      message.success(resData);
+    });
   };
 
   return (
     <div>
       <Breadcrumb
+        style={{ marginBottom: 20 }}
         separator=">"
         items={[
           {
@@ -43,10 +49,21 @@ function CreatUsers() {
           </Col>
 
           <Col span={12}>
-            <Form.Item name="mobile" label="Phone Number">
+            <Form.Item name="phone_Number" label="Phone Number">
               <Input placeholder="Ener your mobile" />
             </Form.Item>
           </Col>
+          <Col span={12}>
+            <Form.Item name="email" label="E-mail">
+              <Input placeholder="E-mail" />
+            </Form.Item>
+          </Col>
+          <Col span={12}>
+            <Form.Item name="city" label="City">
+              <Input placeholder="City" />
+            </Form.Item>
+          </Col>
+
           <Col span={12}>
             <Form.Item name="address" label="Address">
               <Input placeholder="Address" />
